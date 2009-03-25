@@ -1,0 +1,24 @@
+<h1>Listing imagens</h1>
+
+<table>
+  <tr>
+    <th>Comentario</th>
+    <th>Nombre</th>
+    <th>Content type</th>
+  </tr>
+
+<% for imagen in @imagens %>
+  <tr>
+    <td><%=h imagen.comentario %></td>
+    <td><%=h imagen.nombre %></td>
+    <td><%=h imagen.content_type %></td>
+    <td><%= link_to 'Show', imagen %></td>
+    <td><%= link_to 'Edit', edit_imagen_path(imagen) %></td>
+    <td><%= link_to 'Destroy', imagen, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New imagen', new_imagen_path %>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Productos: <%= controller.action_name %></title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag 'global', :media=> "all" %>
+<!-- END:stylesheet -->
+</head>
+
+<body>
+
+<!-- START:Banner arriba -->
+	<div id="masthead">
+		<%= image_tag("simbolo_catleya_fondoamarillo.jpg", :width =>160, :height =>160) %>
+		<%= image_tag("logotipo_catleya.jpg", :width =>502, :height =>160) %>
+	</div>
+<!-- END:Banner arriba -->	
+
+<!-- START: Menu -->	
+	<ul id="nav">
+		<li><a href="index.html">Cartelera</a></li>
+		<li class="menu sfHover"><%= link_to "Eventos", :controller =>"eventos" %>
+			<ul>
+				<li><%= link_to "Ver Eventos", :controller =>"eventos" %></li>
+				<li><%= link_to "Agregar Evento", :controller =>"eventos", :action => "new" %></li>
+			</ul>
+		</li>
+	<li class="menu sfHover"><a href="#">Facturas</a>
+			<ul>
+				<li><a href="subpage.php">Facturas Recibidas</a></li>
+				<li><a href="subpage.php">Facturas Emitadas</a></li>
+			</ul>	
+		</li>
+		<li class="menu sfHover"><a href="#">Presupuestos</a>
+			<ul>
+				<li><a href="#">Presupuestos Emitidos</a></li>
+				<li><a href="#">Presupuestos Recibidos</a></li>
+			</ul>	
+		</li>
+		<li class="menu sfHover"><%= link_to "Proveedores", :controller =>"proveedors" %>
+			<ul>
+				<li><%= link_to "Ver Proveedores", :controller =>"proveedors" %></li>
+				<li><%= link_to "Agregar Proveedor", :controller =>"proveedors", :action =>"new" %></li>
+			</ul>
+		</li>
+		<li class="menu sfHover"><a href="#">Productos y Servicios</a>
+		  <ul>
+			<li><%= link_to "Catalogo", :controller =>"productos" %></li>
+			<li><%= link_to "A&ntilde;adir Producto o Servicio", :controller =>"productos", :action => "new" %></li> 
+		</ul>	
+		</li>
+	    <li><a class="excepcion" href="#">Clientes</a>
+		  <ul>
+			<li><%= link_to "Ver Clientes", :controller =>"clientes" %></li>
+			<li><%= link_to "A&ntilde;adir Cliente", :controller =>"clientes", :action => "new" %></li>
+		</ul>	
+	  </li>
+	</ul>
+	<!-- END: Menu -->
+	
+
+	
+<!-- START:flash -->
+<p style="color: green"><%= flash[:notice] %></p>
+
+<!-- END:flash -->
+
+<%= yield :layout %>
+
+<!-- START: FOOTER -->
+	<ul id="footer">
+		<li>&copy; 2009 Catleya <a href="#">Contactanos</a></li>
+	</ul>
+<!-- END: FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id_producto: 1
+  posicion: 1
+  nombre: MyString
+  descripcion: MyText
+
+two:
+  id_producto: 1
+  posicion: 1
+  nombre: MyString
+  descripcion: MyText

@@ -1,0 +1,5 @@
+<tr class="<%= cycle('linea_impar', 'linea_par') %>">
+  <td><%=h proveedor.nombre %></td>
+  <td><%= link_to 'Editar', edit_proveedor_path(proveedor) %></td>
+  <td><%= link_to 'Eliminar', proveedor, :confirm => 'Estas seguro?', :method => :delete %></td>
+</tr>

@@ -1,0 +1,28 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @producto.nombre %>
+</p>
+
+<p>
+  <b>Proveedor:</b>
+</p>
+<table>
+<%= render(:partial => "shared/proveedor", :collection => @producto.proveedors) %>
+</table>
+<p>
+  <b>Descripcion:</b>
+  <%=h @producto.descripcion %>
+</p>
+
+<p>
+  <b>Precio:</b>
+  <%=h @producto.precio %>
+</p>
+
+<table>
+<%= render(:partial => "shared/imagen", :collection => @producto.imagens) %>
+
+</table>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>

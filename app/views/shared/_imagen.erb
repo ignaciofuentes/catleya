@@ -1,0 +1,4 @@
+<tr class="<%= cycle('linea_impar', 'linea_par') %>">
+  <td><%=h imagen.nombre %></td>
+<img src="<%= url_for(:controller=> 'upload', :action=>'imagen', :id => imagen.id) %>"/>
+</tr>

@@ -1,0 +1,18 @@
+<p>
+  <b>Comentario:</b>
+  <%=h @imagen.comentario %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%=h @imagen.nombre %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @imagen.content_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_imagen_path(@imagen) %> |
+<%= link_to 'Back', imagens_path %>

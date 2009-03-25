@@ -1,0 +1,13 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @proveedor.nombre %>
+</p>
+
+<p>
+  <b>Rif:</b>
+  <%=h @proveedor.rif %>
+</p>
+
+
+<%= link_to 'Edit', edit_proveedor_path(@proveedor) %> |
+<%= link_to 'Back', proveedors_path %>

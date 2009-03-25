@@ -1,0 +1,26 @@
+<h1>Listing actividads</h1>
+
+<table>
+  <tr>
+    <th>Id producto</th>
+    <th>Posicion</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+  </tr>
+
+<% for actividad in @actividads %>
+  <tr>
+    <td><%=h actividad.producto_id %></td>
+    <td><%=h actividad.posicion %></td>
+    <td><%=h actividad.nombre %></td>
+    <td><%=h actividad.descripcion %></td>
+    <td><%= link_to 'Show', actividad %></td>
+    <td><%= link_to 'Edit', edit_actividad_path(actividad) %></td>
+    <td><%= link_to 'Destroy', actividad, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New actividad', new_actividad_path %>

@@ -1,0 +1,22 @@
+<h1>Listing proveedors</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Rif</th>
+  </tr>
+
+<% for proveedor in @proveedors %>
+  <tr>
+    <td><%=h proveedor.nombre %></td>
+    <td><%=h proveedor.rif %></td>
+    <td><%= link_to 'Show', proveedor %></td>
+    <td><%= link_to 'Edit', edit_proveedor_path(proveedor) %></td>
+    <td><%= link_to 'Destroy', proveedor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New proveedor', new_proveedor_path %>

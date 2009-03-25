@@ -1,0 +1,33 @@
+<h1>Editing producto</h1>
+
+<% form_for(@producto, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+
+<p>
+    <%= f.label :proveedor_id %><br />
+
+
+ <%= collection_select(:producto, :proveedor_ids, Proveedor.find(:all),:id, :nombre, {},{:multiple=>"multiple",:name=>'producto[proveedor_ids][]',:size=>"5",:style => "width: 100px"})%> 
+
+  </p>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </p>
+  <p>
+    <%= f.label :precio %><br />
+    <%= f.text_field :precio %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @producto %> |
+<%= link_to 'Back', productos_path %>

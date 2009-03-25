@@ -1,0 +1,23 @@
+<p>
+  <b>Id producto:</b>
+  <%=h @actividad.producto_id %>
+</p>
+
+<p>
+  <b>Posicion:</b>
+  <%=h @actividad.posicion %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%=h @actividad.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%=h @actividad.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_actividad_path(@actividad) %> |
+<%= link_to 'Back', actividads_path %>

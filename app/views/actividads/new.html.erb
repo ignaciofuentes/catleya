@@ -1,0 +1,35 @@
+<h1>New actividad</h1>
+
+<% form_for(@actividad) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+	 <%= f.label :producto_id %><br />
+	
+	<%= 
+
+	collection_select(:actividad, :producto_id, Producto.find(:all),:id, :nombre)
+	 
+	%>
+	
+   
+    
+  </p>
+  <p>
+    <%= f.label :posicion %><br />
+    <%= f.text_field :posicion %>
+  </p>
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', actividads_path %>

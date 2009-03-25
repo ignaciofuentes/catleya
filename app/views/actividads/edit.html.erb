@@ -1,0 +1,34 @@
+<h1>Editing actividad</h1>
+
+<% form_for(@actividad) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+	
+	<%= f.label :producto_id %><br />
+	<%= 
+	@productos = Producto.buscar_productos.map {|u| [u.nombre, u.id] } 
+	select(:actividad, :producto_id, @productos)
+
+	%>
+	
+  </p>
+  <p>
+    <%= f.label :posicion %><br />
+    <%= f.text_field :posicion %>
+  </p>
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @actividad %> |
+<%= link_to 'Back', actividads_path %>
