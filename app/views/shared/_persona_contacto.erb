@@ -1,0 +1,6 @@
+<tr class="<%= cycle('linea_impar', 'linea_par') %>">
+  <td><%=h persona_contacto.nombre %></td>
+  <td><%=h persona_contacto.apellido %></td>
+<td><%= link_to 'Editar', edit_proveedor_persona_contacto_path(proveedor,persona_contacto) %></td>
+  
+</tr>

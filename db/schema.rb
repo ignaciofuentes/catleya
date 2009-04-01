@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090317033553) do
+ActiveRecord::Schema.define(:version => 20090325120910) do
 
   create_table "actividads", :force => true do |t|
     t.integer  "producto_id", :null => false
@@ -44,7 +44,20 @@ ActiveRecord::Schema.define(:version => 20090317033553) do
     t.string   "comentario"
     t.string   "nombre"
     t.string   "content_type"
-    t.binary   "data",         :limit => 16777215
+    t.binary   "data",                 :limit => 16777215
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "relacion_imagen_id"
+    t.string   "relacion_imagen_type"
+  end
+
+  create_table "persona_contactos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "cargo"
+    t.string   "email"
+    t.string   "telefono_oficina"
+    t.string   "telefono_celular"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20090317033553) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "productos_proveedors", :id => false, :force => true do |t|
+    t.integer "producto_id",  :null => false
+    t.integer "proveedor_id", :null => false
+  end
+
+  add_index "productos_proveedors", ["producto_id", "proveedor_id"], :name => "producto_id"
+  add_index "productos_proveedors", ["proveedor_id"], :name => "proveedor_id"
 
   create_table "proveedors", :force => true do |t|
     t.string   "nombre"

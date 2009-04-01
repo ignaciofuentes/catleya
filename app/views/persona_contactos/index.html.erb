@@ -1,0 +1,21 @@
+<h1>Nueva persona de contacto para <%= @relacion_persona.nombre %>:</h1>
+
+<% form_for [@relacion_persona, PersonaContacto.new] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </p>
+
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+
+
+

@@ -1,0 +1,33 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @persona_contacto.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%=h @persona_contacto.apellido %>
+</p>
+
+<p>
+  <b>Cargo:</b>
+  <%=h @persona_contacto.cargo %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @persona_contacto.email %>
+</p>
+
+<p>
+  <b>Telefono oficina:</b>
+  <%=h @persona_contacto.telefono_oficina %>
+</p>
+
+<p>
+  <b>Telefono celular:</b>
+  <%=h @persona_contacto.telefono_celular %>
+</p>
+
+
+<%= link_to 'Edit', edit_persona_contacto_path(@persona_contacto) %> |
+<%= link_to 'Back', persona_contactos_path %>

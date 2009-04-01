@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :proveedors
+  
+  map.resources :persona_contactos
+  
+  map.resources :proveedors, :has_many => :persona_contactos
 
   map.resources :imagens
 

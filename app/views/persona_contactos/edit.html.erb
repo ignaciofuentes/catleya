@@ -1,0 +1,19 @@
+<h1>Editing Persona de Contacto</h1>
+
+<% form_for(@persona_contacto) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </p>
+
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+
+

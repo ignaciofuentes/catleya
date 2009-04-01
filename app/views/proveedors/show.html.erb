@@ -8,6 +8,13 @@
   <%=h @proveedor.rif %>
 </p>
 
+<table>
+<%= render(:partial => "shared/persona_contacto", :collection => @proveedor.persona_contactos, 
+                                                  :locals => { :proveedor => @proveedor}) %>
+</table>
+
+<p><%= link_to 'New', new_proveedor_persona_contacto_path(@proveedor) %></p>
+</p>
 
 <%= link_to 'Edit', edit_proveedor_path(@proveedor) %> |
 <%= link_to 'Back', proveedors_path %>
